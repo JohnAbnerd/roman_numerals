@@ -1,20 +1,22 @@
 #include <iostream>
 #include <string>
+
 using namespace std;
+
+//enter variables first
+bool continueLoop = true;
+int year;
+string ans;
+string roman_year_value;
 
 int main()
 {
-
-//enter variables first
-    int year = 0;
-    string roman_year_value;
-
-    cout << "Please enter year: " << endl;
-    cout << "To end program, please type 0000." << endl;
-    cin >> year;
-
-    if (year >= 1000 && year <= 3000)
+    while (continueLoop)
       {
+        roman_year_value = "";
+        cout << "Please enter year: " << endl;
+        cin >> year;
+        int yearOut = year;
         while (year != 0)
             {
                 if (year >= 1000)
@@ -83,13 +85,17 @@ int main()
                     roman_year_value += "I";
                     }
               }
+              cout << "The year " << yearOut << " in Roman Numerals is :" << roman_year_value << endl;
+        cout << "Continue y or n ?: ";
+        cin >> ans;
+        if (ans == "n")
+        {
+            continueLoop =false;
         }
-    else if (year == 0000)
-      {
-        cout << "Thank you for using this program." << endl;
+        else
+        {
+            continueLoop = true;
         }
-    else
-      {
-        cout << "Please enter valid value or say 'Done'." << endl;
-        }
-  }
+    }
+
+}
