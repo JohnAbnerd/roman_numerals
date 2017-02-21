@@ -16,7 +16,7 @@ int main()
         {
             cout << "Please enter year: " << endl;   
             cin >> year;
-              if (year >= 1000 && year <= 3000)
+            if (year >= 1000 && year <= 3000)
                 {
                     while (year != 0)
                         {
@@ -86,17 +86,22 @@ int main()
                                 roman_year_value += "I";
                                 }
                         }
-                }
-            cout << "The Roman numeral value for the year you entered is: " << roman_year_value << endl;
-            cout << "Continue Y or N? " << endl;
-            cin >> cont;
-            if (cont == "N")
-                {
-                  continueLoop = False;
+    
+                    cout << "Continue Y or N? " << endl;
+                    cin >> cont;
+                    cout << "The Roman numeral value for the year you entered is: " << roman_year_value << endl;
+                    if (cont == "N")
+                        {
+                          continueLoop = False;
+                        }
+                    else
+                        {
+                          continueLoop = True;
+                        }
                 }
             else
                 {
-                  continueLoop = True;
+                    cout << "Please enter valid value: " << year << endl;
                 }
         }
 }
